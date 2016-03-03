@@ -1,5 +1,5 @@
 <?php
-namespace Cake\Codeception;
+namespace Cake\Codeception\Module;
 
 use Cake\Codeception\Helper\ConfigTrait;
 use Cake\Codeception\Helper\DbTrait;
@@ -7,11 +7,12 @@ use Cake\Codeception\Helper\ORMTrait;
 use Cake\Core\Configure;
 use Cake\Event\EventManager;
 use Cake\TestSuite\Fixture\FixtureManager;
+use Codeception\Lib\Framework;
+use Codeception\Lib\Interfaces\ActiveRecord;
 use Codeception\TestCase;
 
-class Framework extends \Codeception\Lib\Framework
+class CakePHP3Basic extends Framework implements ActiveRecord
 {
-
     use ConfigTrait;
     use DbTrait;
     use ORMTrait;

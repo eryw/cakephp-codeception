@@ -1,5 +1,5 @@
 <?php
-namespace Cake\Codeception;
+namespace Cake\Codeception\Lib\Connector;
 
 use Cake\Core\Configure;
 use Cake\Event\Event;
@@ -13,7 +13,7 @@ use Symfony\Component\BrowserKit\Cookie;
 use Symfony\Component\BrowserKit\Request as BrowserKitRequest;
 use Symfony\Component\BrowserKit\Response as BrowserKitResponse;
 
-class Connector extends Client
+class CakePHP3 extends Client
 {
     /**
      * Associative array of CakePHP classes:
@@ -57,7 +57,7 @@ class Connector extends Client
      * @param \Symfony\Component\BrowserKit\Request $request BrowserKit request.
      * @return \Cake\Network\Request Cake request.
      */
-    protected function filterRequest($request)
+    protected function filterRequest(BrowserKitRequest $request)
     {
         $url = preg_replace('/^https?:\/\/[a-z0-9\-\.]+/', '', $request->getUri());
 

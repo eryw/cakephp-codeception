@@ -1,17 +1,17 @@
 <?php
-namespace Cake\Codeception;
+namespace Cake\Codeception\Module;
 
 use Cake\Codeception\Helper\AuthTrait;
 use Cake\Codeception\Helper\DispatcherTrait;
 use Cake\Codeception\Helper\RouterTrait;
 use Cake\Codeception\Helper\SessionTrait;
 use Cake\Codeception\Helper\ViewTrait;
+Use Cake\Codeception\Lib\Connector\CakePHP3 as CakePHP3Connector;
 use Cake\Routing\Router;
 use Codeception\TestCase;
 
-class Helper extends Framework
+class CakePHP3Full extends CakePHP3Basic
 {
-
     use AuthTrait;
     use DispatcherTrait;
     use RouterTrait;
@@ -56,6 +56,6 @@ class Helper extends Framework
      */
     protected function getConnectorInstance(array $server = [])
     {
-        return new Connector($server);
+        return new CakePHP3Connector($server);
     }
 }
